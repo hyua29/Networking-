@@ -122,6 +122,7 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 	- the client 
 - [CA认证原理上](http://yale.iteye.com/blog/1675344)
 - [CA认证原理下](http://yale.iteye.com/blog/1675355)
+
 man-in-the-middle attack
 - A certificate is essential in order to circumvent a malicious party which happens to be on the route to a target server 
   which acts as if it were the target. 
