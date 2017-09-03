@@ -85,31 +85,47 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 - Transport Layer Security § Security
 - If parts of the site are accessed with HTTP instead of HTTPS, 
   the user and the session will get exposed. 
-- A server is required to present a certificate as part of the initial connection setup.
+- ***A server is required to present a certificate as part of the initial connection setup.***
 - A client connecting to that server will perform the certification path validation algorithm
     - The subject of the certificate matches the hostname to which the client is trying to connect.
     - The certificate is signed by ***a trusted certificate authority***.
 
-CA
+[CA](https://en.wikipedia.org/wiki/Certificate_authority)
 - certificate authority
-- A certificate authority (CA) is an organization that stores public keys and their owners, and every party in a communication trusts this organization (and knows its public key).
+- [watch vedio](https://www.youtube.com/watch?v=DWQpxiXwccQ)
+- Server certificates typically are issued to hostnames, which could be a machine name (such as ‘XYZ-SERVER-01’) or 
+  domain name (such as ‘www.symantec.com’)
+	- a web site operator obtains a certificate by applying to a certificate provider with a certificate signing request
+- A certificate authority (CA) is an organization that ***stores public keys and their owners***(server's domain name and their public keys?),
+  and every party in a communication trusts this organization (and knows its public key).
+- allow the client to trust the server and vise versa
 - when the client wants to send message to B:
-client(A) encrypts its message with private key of A. This message can only be decrypted by public key of A which is decrypted by the private key
-of a certificate athourity and need a public key of CA to decrypt; so a public key certificate of A needs to sent at the same time to allow
-receiver(B) to know that is the public key of A. The whole thing(encrypted message and public key certificate of A) are both encrypted by the public key of B, and only B with the private key of itself can see that the message is 
+  client(A) encrypts its message with private key of A. This message can only be decrypted by public key of A which is decrypted by the private key
+  of a certificate athourity and need a public key of CA to decrypt; so a public key certificate of A needs to sent at the same time to allow
+  receiver(B) to know that is the public key of A. The whole thing(encrypted message and public key certificate of A) are both encrypted by the public key of B, 
+  and only B with the private key of itself can see that the message is 
 - since the message a client send to the server is encrypted by the public key of server; only the server can decrypt it
     - by doing this, the attacker ***cannot read the message*** by intercepting the packets
-    - ***This mechanism is only safe if the user can be sure that it is the bank that they see in their web           browser***
-- When the user's web browser receives the public key from www.bank.example it also receives a digital signature of   the key 
-    - If the user types in www.bank.example, but their communication is hi-jacked and a fake web-site (that           pretends to be the bank web-site) sends    the page information back to the user's browser, the fake web-page   can send a fake public key to the user (for which the fake site owns a        matching private key).The user   will fill the form with their personal data and will submit the page. The fake web-page will then get access   to the user's data.
-        - The browser already possesses the public key of the CA and consequently can verify the signature, trust     the certificate and the public key in it.since www.bank.example uses a public key that the certification   authority certifies, a fake www.bank.example can only use the same public key. Since the fake               www.bank.example does not know the corresponding private key, it cannot create the signature needed to     verify its authenticity.
-
+    - ***This mechanism is only safe if the user can be sure that it is the bank that they see in their web browser***
+- When the user's web browser receives the public key from www.bank.example it also receives a digital signature of the key 
+    - If the user types in www.bank.example, but their communication is hi-jacked and a fake web-site 
+      (that pretends to be the bank web-site) sends the page information back to the user's browser, 
+      the fake web-page can send a fake public key to the user (for which the fake site owns a matching private key).
+      The user will fill the form with their personal data and will submit the page. The fake web-page will then get access
+      to the user's data.
+        - ***The browser already possesses the public key of the CA and consequently can verify the signature, 
+	  trust the certificate and the public key in it.since www.bank.example uses a public key that 
+	  the certification authority certifies(this packet has to pass CA because only CA can sign it with CA's private key),***
+	  a fake www.bank.example can only use the same public key. Since the fake www.bank.example does not know the corresponding private key, 
+	  it cannot create the signature needed to verify its authenticity.
+	- the client 
 man-in-the-middle attack
 - A certificate is essential in order to circumvent a malicious party which happens to be on the route to a target server 
   which acts as if it were the target. 
+[Malware](https://en.wikipedia.org/wiki/Malware)
+[Packet Injection](https://en.wikipedia.org/wiki/Packet_injection)
 
-
-VPN
+[VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
 - virtual private network 
 
 
