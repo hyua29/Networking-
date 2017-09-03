@@ -93,6 +93,7 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 [CA](https://en.wikipedia.org/wiki/Certificate_authority)
 - certificate authority
 - [watch vedio](https://www.youtube.com/watch?v=DWQpxiXwccQ)
+- CA certification happens when the packets are sent and are installed at both ends
 - Server certificates typically are issued to hostnames, which could be a machine name (such as ‘XYZ-SERVER-01’) or 
   domain name (such as ‘www.symantec.com’)
 	- a web site operator obtains a certificate by applying to a certificate provider with a certificate signing request
@@ -119,7 +120,8 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 	  a fake www.bank.example can only use the same public key. Since the fake www.bank.example does not know the corresponding private key, 
 	  it cannot create the signature needed to verify its authenticity.
 	- the client 
-	
+- [CA认证原理上](http://yale.iteye.com/blog/1675344)
+- [CA认证原理下](http://yale.iteye.com/blog/1675355)
 man-in-the-middle attack
 - A certificate is essential in order to circumvent a malicious party which happens to be on the route to a target server 
   which acts as if it were the target. 
