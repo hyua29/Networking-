@@ -1,5 +1,5 @@
 Basic networking 
-====
+=====
 
 OSI model 
 - Open Systems Interconnection model
@@ -80,7 +80,7 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 - Persistent connections
   - no new SYNs</br>
 
-[TLS/SSL](https://en.wikipedia.org/wiki/Public_key_certificate) and [see also](https://en.wikipedia.org/wiki/Transport_Layer_Security)
+[TLS/SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [see public key](https://en.wikipedia.org/wiki/Public_key_certificate)
 - SSL is the old name: Secure Sockets Layer 
 - Transport Layer Security § Security
 - If parts of the site are accessed with HTTP instead of HTTPS, 
