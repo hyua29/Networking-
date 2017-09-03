@@ -119,14 +119,18 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 	  a fake www.bank.example can only use the same public key. Since the fake www.bank.example does not know the corresponding private key, 
 	  it cannot create the signature needed to verify its authenticity.
 	- the client 
+	
 man-in-the-middle attack
 - A certificate is essential in order to circumvent a malicious party which happens to be on the route to a target server 
   which acts as if it were the target. 
   
 [Malware](https://en.wikipedia.org/wiki/Malware)
-- 
+- ?
+- ?
+
 [Packet Injection](https://en.wikipedia.org/wiki/Packet_injection)
-- 
+- ?
+- ?
 
 [VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
 - virtual private network 
