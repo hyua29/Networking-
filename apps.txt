@@ -1,0 +1,5 @@
+xpad
+git cola
+pip
+scrot
+gdebi
