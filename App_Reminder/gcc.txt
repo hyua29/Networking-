@@ -1,0 +1,2 @@
+start compiling: gcc -o filename 'cd'
+./filename script parameters

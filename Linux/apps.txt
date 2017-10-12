@@ -3,3 +3,4 @@ git cola
 pip
 scrot
 gdebi
+lantern
