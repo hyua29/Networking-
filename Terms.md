@@ -45,6 +45,7 @@ The following example shows the separation of the network prefix and the host id
 The result of the bitwise AND operation of IP address and the subnet mask is the network prefix 192.168.5.0. The host part, which is 130, is derived by the bitwise AND operation of the address and the one's complement of the subnet mask.
 - Subnetting
 Subnetting is the process of designating some high-order bits from the host part and grouping them with the network mask to form the subnet mask. This divides a network into smaller subnets. The following diagram modifies the example by moving 2 bits from the host part to the subnet mask to form four smaller subnets one quarter the previous size:
+
 |Binary form   |	Dot-decimal                |  notation      |
 |--------------|:---------------------------------:|---------------:|
 |IP address     |11000000.10101000.00000101.10000010|192.168.5.130  |
@@ -53,6 +54,7 @@ Subnetting is the process of designating some high-order bits from the host part
 |Host part      |00000000.00000000.00000000.00000010|0.0.0.2        |
 - More subnet
 A /24 network may be divided into the following subnets by increasing the subnet mask successively by one bit. This affects the total number of hosts that can be addressed in the /24 network (last column).
+
 |Prefix size| Subnet mask| Available subnets| Usable hosts per subnet|	Total usable hosts|
 |-----------|:----------:|:----------------:|:----------------------:|
 -----------------:|
@@ -69,6 +71,32 @@ Broadcast address
 - A broadcast address is a logical address at which all devices connected to a multiple-access communications network are enabled to receive datagrams. A message sent to a broadcast address is typically received by all network-attached hosts, rather than by a specific host.
 - The broadcast address for an IPv4 host can be obtained by performing a bitwise OR operation between the bit complement of the subnet mask and the host's IP address. In other words, take the host's IP address, and set to '1' any bit positions which hold a '0' in the subnet mask.
 - Example: For broadcasting a packet to an entire IPv4 subnet using the private IP address space 172.16.0.0/12, which has the subnet mask 255.240.0.0, the broadcast address is 172.16.0.0 | 0.15.255.255 = 172.31.255.255.
+
+[DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
+- Dynamic Host Configuration Protocol
+- The Dynamic Host Configuration Protocol (DHCP) is a standardized network protocol used on Internet Protocol (IP) networks. The DHCP is controlled by a DHCP server that dynamically distributes network configuration parameters, such as IP addresses, for interfaces and services. A router or a residential gateway can be enabled to act as a DHCP server. A DHCP server enables computers to request IP addresses and networking parameters automatically, reducing the need for a network administrator or a user to configure these settings manually.  In the absence of a DHCP server, each computer or other device on the network needs to be manually assigned to an IP address.
+- Dynamic allocation
+A network administrator reserves a range of IP addresses for DHCP, and each DHCP client on the LAN is configured to request an IP address from the DHCP server during network initialization. The request-and-grant process uses a lease concept with a controllable time period, allowing the DHCP server to reclaim and then reallocate IP addresses that are not renewed.
+- Automatic allocation
+The DHCP server permanently assigns an IP address to a requesting client from the range defined by the administrator. This is like dynamic allocation, but the DHCP server keeps a table of past IP address assignments, so that it can preferentially assign to a client the same IP address that the client previously had.
+- Manual allocation (commonly called static allocation)
+The DHCP server issues a private IP address dependent upon each client's MAC address, based on a predefined mapping by the administrator. This feature is variously called static DHCP assignment by DD-WRT, fixed-address by the dhcpd documentation, address reservation by Netgear, DHCP reservation or static DHCP by Cisco and Linksys, and IP address reservation or MAC/IP address binding by various other router manufacturers. If no match for the client's MAC address is found, the server may or may not optionally fall back to either Dynamic or Automatic allocation.
+
+
+[MAC address](https://en.wikipedia.org/wiki/MAC_address)
+- Media access control address
+- A media access control address (MAC address) of a computer is a unique identifier assigned to network interfaces for communications at the data link layer of a network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet and Wi-Fi. Logically, MAC addresses are used in the media access control protocol sublayer of the OSI reference model.
+- MAC addresses are most often assigned by the manufacturer of a network interface controller (NIC) and are stored in its hardware, such as the card's read-only memory or some other firmware mechanism. If assigned by the manufacturer, a MAC address usually encodes the manufacturer's registered identification number and may be referred to as the burned-in address (BIA). It may also be known as an Ethernet hardware address (EHA), hardware address or physical address (not to be confused with a memory physical address). This can be contrasted to a programmed address, where the host device issues commands to the NIC to use an arbitrary address.
+- MAC addresses are the low level basics that make your ethernet based network work.
+**Network cards each have a unique MAC address**. Packets that are sent on the ethernet are always coming from a MAC address and sent to a MAC address. If a network adapter is receiving a packet, it is comparing the packet’s destination MAC address to the adapter’s own MAC address. If the addresses match, the packet is processed, otherwise it is discarded.
+
+There are special MAC addresses, one for example is ff:ff:ff:ff:ff:ff, which is the broadcast address and addresses every network adapter in the network.
+
+
+
+
+
+
 
 
 IP
@@ -186,5 +214,4 @@ man-in-the-middle attack
 
 
 [test](https://github.com/FIT2101-S2-2017/TACI/blob/master/Sprint%20Documents/Group%20Log.md)
-
 
