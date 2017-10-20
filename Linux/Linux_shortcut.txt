@@ -1,9 +1,13 @@
 linux_basic:
+-uesrdel -h
+-ps -A -> check all processes
+-killal PID/name
 -gksu dbus-launch nautilus -> delete locked file 
 -usermod -a -G wireshark _your_username_ -> add to group
 -groups myusername -> check group
 --cd ../ -> cd goback
 -sudo apt-get --purge remove _app
+-sudo apt-get autoremove _app
 -sudo apt-get install _appName
 -gedit /etc/profile
  add: PATH=$PATH:"/root/Coding/pycharm-community/bin"

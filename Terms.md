@@ -30,6 +30,46 @@ OSI model
 TCP is a mechanism that allows us to transfer data safely; </br>
 and HTTP, which utilizes TCP to transfer its data, is a specific protocol used by Web servers and clients.</br>
 -----------------------------------------------------------------------------------------------------------------------------
+[Sunbet Mask](https://en.wikipedia.org/wiki/Subnetwork)
+- This logical addressing structure permits the selective routing of IP packets across multiple networks via special gateway computers, called routers, to a destination host if the network prefixes of origination and destination hosts differ, or sent directly to a target host on the local network if they are the same. 
+- Determining the network prefix
+An IPv4 network mask consists of 32 bits, a sequence of ones (1) followed by a block of zeros (0). The trailing block of zeros designates that part as being the host identifier.
+The following example shows the separation of the network prefix and the host identifier from an address (192.168.5.130) and its associated /24 network mask (255.255.255.0). The operation is visualized in a table using binary address formats.
+
+| Binary form  |	Dot-decimal                | notation      |
+|--------------|:---------------------------------:|--------------:|
+|IP address    |11000000.10101000.00000101.10000010| 192.168.5.130 |
+|Subnet mask   |11111111.11111111.11111111.00000000| 255.255.255.0 |
+|Network prefix|11000000.10101000.00000101.00000000|192.168.5.0    |
+|Host part     |00000000.00000000.00000000.10000010|	0.0.0.130  | 
+The result of the bitwise AND operation of IP address and the subnet mask is the network prefix 192.168.5.0. The host part, which is 130, is derived by the bitwise AND operation of the address and the one's complement of the subnet mask.
+- Subnetting
+Subnetting is the process of designating some high-order bits from the host part and grouping them with the network mask to form the subnet mask. This divides a network into smaller subnets. The following diagram modifies the example by moving 2 bits from the host part to the subnet mask to form four smaller subnets one quarter the previous size:
+|Binary form   |	Dot-decimal                |  notation      |
+|--------------|:---------------------------------:|---------------:|
+|IP address     |11000000.10101000.00000101.10000010|192.168.5.130  |
+|Subnet mask    |11111111.11111111.11111111.11000000|255.255.255.192|
+|Network prefix |11000000.10101000.00000101.10000000|192.168.5.128  |
+|Host part      |00000000.00000000.00000000.00000010|0.0.0.2        |
+- More subnet
+A /24 network may be divided into the following subnets by increasing the subnet mask successively by one bit. This affects the total number of hosts that can be addressed in the /24 network (last column).
+|Prefix size| Subnet mask| Available subnets| Usable hosts per subnet|	Total usable hosts|
+|-----------|:----------:|:----------------:|:----------------------:|
+-----------------:|
+|/24|	255.255.255.0	|1	|254	|254|
+|/25|	255.255.255.128	|2	|126	|252|
+|/26|	255.255.255.192	|4	|62	|248|
+|/27|	255.255.255.224	|8	|30	|240|
+|/28|	255.255.255.240	|16	|14	|224|
+|/29|	255.255.255.248	|32	|6	|192|
+|/30|	255.255.255.252	|64	|2	|128|
+|/31|	255.255.255.254	|128	|2 *	|256|
+
+Broadcast address
+- A broadcast address is a logical address at which all devices connected to a multiple-access communications network are enabled to receive datagrams. A message sent to a broadcast address is typically received by all network-attached hosts, rather than by a specific host.
+- The broadcast address for an IPv4 host can be obtained by performing a bitwise OR operation between the bit complement of the subnet mask and the host's IP address. In other words, take the host's IP address, and set to '1' any bit positions which hold a '0' in the subnet mask.
+- Example: For broadcasting a packet to an entire IPv4 subnet using the private IP address space 172.16.0.0/12, which has the subnet mask 255.240.0.0, the broadcast address is 172.16.0.0 | 0.15.255.255 = 172.31.255.255.
+
 
 IP
 - Internet Protocol 

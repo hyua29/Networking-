@@ -4,3 +4,10 @@ pip
 scrot
 gdebi
 lantern
+eclipse
+pycharm
+gcc
+bluegriffon
+metasploit
+wget (-k -p)
+dig _domainname
