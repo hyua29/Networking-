@@ -9,5 +9,9 @@ pycharm
 gcc
 bluegriffon
 metasploit
-wget (-k -p)
+wget (wget -k -p domain_name)
 dig _domainname
+vsftpd
+(cd /etc; nano vsftpd.conf; sudo /etc/init.d/vsftpd restart)
+ftp
+ufw

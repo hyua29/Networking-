@@ -1,0 +1,20 @@
+	Load Null
+	Store C
+Loop,	Load A
+	Skipcond 800
+	Jump Done
+	Load C
+	Add B
+	Store C
+	Load A
+	Subt One
+	Store A
+	Jump Loop
+
+Done,	Halt
+
+Null,	Dec 0
+One,	Dec 1
+A,	Dec 4
+B,	Dec 23
+C,	Dec 0

@@ -1,0 +1,39 @@
+﻿/Author: Gloria Ooi, ID: 27467449
+/Last updated: 13/04/17
+/Task 2.1.3 - A subroutine for printing a string
+LOAD NUM							/Load integer value
+STORE PrintString					/Store it in PrintString
+JnS Print							/Jump to subroutine
+END, 	HALT						/Exit programme
+
+Print, 	HEX 0 						/subroutine name
+LOOP, 	LOAD PrintString			/Load address 
+		ADD I						/Address+i
+        STORE ADDR					/Store new address in ADDR
+        CLEAR						/Clear AC
+        LOADI ADDR					/Get value stored in ADDR address into AC
+        SKIPCOND 400				/If value stored ==0:
+        JUMP MAIN					/If value !=0, jump to MAIN
+        JumpI  Print				/Jump to return address
+MAIN,   OUTPUT						
+		LOAD I						/Load I
+		ADD ONE						/I+1
+		STORE I						/I = I=1
+        JUMP LOOP
+        
+ADDR, 						HEX 0
+ONE, 						HEX 1
+NUM,						DEC 23
+PrintString, 				HEX 0 	/argument: address of string
+I, 							HEX 0	/iterator
+GLORIA_OOI,					HEX 047 /G
+                            HEX 04C /L
+                            HEX 04F /O
+                            HEX 052 /R
+                            HEX 049 /I
+                            HEX 041 /A
+                            HEX 020 /(space)
+                            HEX 04F /O
+                            HEX 04F /O
+                            HEX 049 /I
+                            HEX 000 /end

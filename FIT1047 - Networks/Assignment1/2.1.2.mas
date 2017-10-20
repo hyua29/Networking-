@@ -1,0 +1,33 @@
+﻿/Author: Gloria Ooi, ID: 27467449
+/Last updated: 13/04/17
+/Task 2.1.2 - Printing a string
+LOOP, 	LOAD CurrentCharacterAddress/Load address 
+		ADD I						/Address+i
+        STORE ADDR					/Store new address in ADDR
+        CLEAR						/Clear AC
+        LOADI ADDR					/Get value stored in ADDR address into AC
+        SKIPCOND 400				/If value stored ==0:
+        JUMP MAIN					/If value !=0, jump to MAIN
+        JUMP END					/End programme
+MAIN,   OUTPUT						
+		LOAD I						/Load I
+		ADD ONE						/I+1
+		STORE I						/I = I=1
+        JUMP LOOP
+END, 	HALT						/Exit programme
+ADDR, 	HEX 0
+ONE, 	DEC 1
+I, 		DEC 0						/iterator
+
+CurrentCharacterAddress,	DEC 18	/Line at which the string starts
+GLORIA_OOI				,	HEX 047 /G
+                            HEX 04C /L
+                            HEX 04F /O
+                            HEX 052 /R
+                            HEX 049 /I
+                            HEX 041 /A
+                            HEX 020 /(space)
+                            HEX 04F /O
+                            HEX 04F /O
+                            HEX 049 /I
+                            HEX 000 /end

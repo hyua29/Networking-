@@ -1,0 +1,64 @@
+﻿/Author: Gloria Ooi, ID: 27467449
+/Last updated: 13/04/17
+/Task 2.1.6 - ROT13
+LOAD NUM							/Load integer value
+STORE PrintString					/Store it in PrintString
+JnS ROT13							/Jump to subroutine
+END, 	HALT						/Exit programme
+ROT13, 	HEX 0 						/subroutine name
+LOOP, 	LOAD PrintString			/Load address 
+		ADD I						/Address+i
+        STORE ADDR					/Store new address in ADDR
+        CLEAR						/Clear AC
+        LOADI ADDR					/Get value stored in ADDR address into AC
+        STORE CURRENTVALUE			/Store value in AC in label CURRENTVALUE
+        SKIPCOND 400				/If value stored ==0:
+        JUMP CHECK1					/If value !=0, jump to CHECK1
+        JumpI  ROT13				/Jump to return address
+CHECK1, LOAD CURRENTVALUE			/Check 1: Check if lowercase only
+		SUBT ONETWOTHREE			/CURRENTVALUE - 123
+		SKIPCOND 000				/if output <0  
+        JUMP MAIN2					/if not, ITERATE
+        JUMP CHECK2					/jump to CHECK2
+CHECK2,	LOAD CURRENTVALUE			/Check 2: Check if lowercase only
+		SUBT NINESIX				/CURRENTVALUE - 96
+        SKIPCOND 800				/If positive
+        Jump MAIN2					/If not positive, EXIT
+        JUMP CIPHER 				/jump to CIPHER
+CIPHER, LOAD CURRENTVALUE			/cipher
+		ADD ONETHREE				/CURENTVALUE+13
+        STOREI ADDR					/Store new value
+        SUBT ONETWOTWO				/CURRENTVALUE - 122
+        SKIPCOND 800				/If positive
+        JUMP MAIN2					/if not, jump to MAIN2
+		JUMP STORE2					/if positive, store     
+STORE2, ADD NINESIX
+		STOREI ADDR					/Store again
+MAIN2,	LOADI ADDR					/Get value stored in ADDR address into AC
+        OUTPUT						
+        LOAD I						/Iterate: Load I
+		ADD ONE						/I+1
+		STORE I						/I = I=1
+        JUMP LOOP
+CURRENTVALUE,				HEX 0
+ONETHREE,					DEC 13
+SIXFOUR,					DEC 64
+NINESIX,					DEC 96
+ONETWOTWO,					DEC 122
+ONETWOTHREE,				DEC 123      
+ADDR, 						HEX 0
+ONE, 						HEX 1
+NUM,						DEC 50
+PrintString, 				HEX 0 	/argument: address of string
+I, 							HEX 0	/iterator
+GLORIA_OOI,					HEX 067 /g
+                            HEX 06C /l
+                            HEX 06F /o
+                            HEX 072 /r
+                            HEX 069 /i
+                            HEX 061 /a
+                            HEX 020 /(space)
+                            HEX 06F /o
+                            HEX 06F /o
+                            HEX 069 /i
+                            HEX 000 /end
