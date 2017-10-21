@@ -15,3 +15,5 @@ vsftpd
 (cd /etc; nano vsftpd.conf; sudo /etc/init.d/vsftpd restart)
 ftp
 ufw
+gparted
+
