@@ -1,63 +1,56 @@
 linux_basic:
--uesrdel -h
--ps -A -> check all processes
--killal PID/name
--gksu dbus-launch nautilus -> delete locked file 
--usermod -a -G wireshark _your_username_ -> add to group
--groups myusername -> check group
+- ip route > find gateway
+- netstat -t > show tcp connection
+- netstat -h > routing table
+- hostname > show hostname
+- route > show route table
+- man <cmd> > get manual of this command
+- whatis <cmd>
+- <cmd> --help
+- <cmd> _file > send output to a file
+- uesrdel -h
+- history
+- ps -A -> check all processes
+- killal PID/name
+- gksu dbus-launch nautilus -> delete locked file 
+- usermod -a -G wireshark _your_username_ -> add to group
+- groups myusername -> check group
 --cd ../ -> cd goback
--sudo apt-get --purge remove _app
--sudo apt-get autoremove _app
--sudo apt-get install _appName
--gedit /etc/profile
+- sudo apt-get --purge remove _app
+- sudo apt-get autoremove _app
+- sudo apt-get install _appName
+- gedit /etc/profile
  add: PATH=$PATH:"/root/Coding/pycharm-community/bin"
  export PATH    -> set new environment variable
--tar -zxvf file_name.tar.gz
+- tar -zxvf file_name.tar.gz
  This will extract the file_name.gz to a particular directory. cd folder/
  This will change the directory to where you have extracted your tar.gz
  ./configure
  make
  sudo make install
--sudo gedit /etc/apt/sources.list -> update source.list
+- sudo gedit /etc/apt/sources.list -> update source.list
  deb http://http.kali.org/kali kali-rolling main contrib non-free
  deb http://old.kali.org/kali sana main non-free contrib
  deb http://old.kali.org/kali moto main non-free contrib
  sudo apt-get update
 
 These will install your application. For further information visit these links : 
-
-
-install libpcap
-apt-get install libpcap-dev
+- install libpcap
+- apt-get install libpcap-dev
 
 install exe:
-sudo apt install mono-complete
-mono Fiddler.exe (or) mono /path/to/extracted/fiddler/Fiddler.exe
+- sudo apt install mono-complete
+- mono Fiddler.exe (or) mono /path/to/extracted/fiddler/Fiddler.exe
 
 
 
 aircrack:
-sudo airmon-ng start wlan0 -> prepare the wireless card, which gives out wlan0, to monitor mode
-sudo airmon-ng stop _name -> stop monitoring
-sudo airodump-ng start mon0 -> setup a channel(mon0) for target network
+- sudo airmon-ng start wlan0 -> prepare the wireless card, which gives out wlan0, to monitor mode
+- sudo airmon-ng stop _name -> stop monitoring
+- sudo airodump-ng start mon0 -> setup a channel(mon0) for target network
 
 
 
 network:
-sudo iwconfig (network interface)-> check network info (including mode)
+- sudo iwconfig (network interface)-> check network info (including mode)
 
-
-screenshot:
-import filename.png
-eog filename.png
-
-
-
-
-## cannot recognize or capture http  ##
-I encountered a problem when running wireshark to monitor data flow in/from my computer on ubuntu.
-<br>I could capture http requests or responds, but they are all texts and there was only a "success/n" in it.  When I use the filter on http, most of the packets were OCSP. </br>
-<br>I also went to edit->preference->protocols->http, SCTP ports was 80 and ssl/tls ports was 443. wireshark returned normal http packets for a while when i set ssl/tls ports to 80, but then wireshark crashed. After i reopened it, no more normal http (html,png,etc.) packets again.
-</br>I have no idea what is going on, can anyone help me out?</br>
-<br>Also, I couldn't run wireshark even if i login in as root. It said that im unprivileged user; so i went to init.lua and turned off lua warning. im not sure whether it has impact on the capturing or not.</br>
-<br>Im sorry I couldn't upload any pictures, the website says i dont have enough reputation points...
