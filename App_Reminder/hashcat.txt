@@ -1,0 +1,1 @@
+nano ~/.hashcat/hashcat.potfile

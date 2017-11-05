@@ -206,12 +206,35 @@ man-in-the-middle attack
 [VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
 - virtual private network 
 
+BSSID
+- BSSID is the MAC address of the AP's radio for that service set.
+SSID
+- SSID is the service set identifier or network name for the basic service set(BSS).
+ESSID
+- ESSID is the same as the SSID but is used across multiple access points as part of the same WLAN.
 
 
 
 
 -
+cryptography
+=============
+[Salt](https://en.wikipedia.org/wiki/Salt_(cryptography))<br>
+[Decription](https://crackstation.net/hashing-security.htm)
+- In cryptography, a salt is random data that is used as an additional input to a one-way function that "hashes" a password or passphrase. Salts are closely related to the concept of nonce. The primary function of salts is to defend against dictionary attacks or against its hashed equivalent, a pre-computed rainbow table attack.
+- A new salt is randomly generated for each password. In a typical setting, the salt and the password (or its version after Key stretching) are concatenated and processed with a cryptographic hash function, and the resulting output (but not the original password) is stored with the salt in a database. Hashing allows for later authentication without keeping and therefore risking the plaintext password in the event that the authentication data store is compromised.
+- Since salts do not have to be memorized by humans they can make the size of the rainbow table required for a successful attack prohibitively large without placing a burden on the users. Since salts are different in each case, they also protect commonly used passwords, or those who use the same password on several sites, by making all salted hash instances for the same password different from each other.
+- Example
+
+|Username	|Salt value    	  |String to be hashed	        |Hashed value = SHA256 (Password + Salt value)                          |
+| ------------- |:---------------:|:---------------------------:| ---------------------------------------------------------------------:|
+|user1	        |E1F53135E559C253 |password123+E1F53135E559C253	|72AE25495A7981C40622D49F9A52E4F1565C90F048F59027BD9C8C8900D5C3D8       |
+|user2   	|84B03D034B409D4E |password123+84B03D034B409D4E	|B4B6603ABC670967E99C7E7F1389E40CD16E78AD38EB1468EC2AA1E62B8BED3A       |
+
+- As you can see from the hashed value, even though the plaintext passwords are the same, the hashed values are different. Additionally, dictionary attacks are mitigated to a degree as an attacker cannot practically precompute the hashes. However, a salt cannot protect against common or easily-guessed passwords.
 
 
-[test](https://github.com/FIT2101-S2-2017/TACI/blob/master/Sprint%20Documents/Group%20Log.md)
+
+
+
 

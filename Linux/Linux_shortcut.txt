@@ -1,4 +1,7 @@
 linux_basic:
+- rm -r _file -> remove a directory 
+- /home/username/.local/share/applications/xxx.desktop
+- ~/.local/share/applications/xxx.desktop
 - ip route > find gateway
 - netstat -t > show tcp connection
 - netstat -h > routing table
@@ -20,7 +23,8 @@ linux_basic:
 - sudo apt-get autoremove _app
 - sudo apt-get install _appName
 - gedit /etc/profile
- add: PATH=$PATH:"/root/Coding/pycharm-community/bin"
+ add: 
+PATH=$PATH:"/root/Coding/pycharm-community/bin"
  export PATH    -> set new environment variable
 - tar -zxvf file_name.tar.gz
  This will extract the file_name.gz to a particular directory. cd folder/
