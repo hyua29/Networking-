@@ -56,8 +56,7 @@ Subnetting is the process of designating some high-order bits from the host part
 A /24 network may be divided into the following subnets by increasing the subnet mask successively by one bit. This affects the total number of hosts that can be addressed in the /24 network (last column).
 
 |Prefix size| Subnet mask| Available subnets| Usable hosts per subnet|	Total usable hosts|
-|-----------|:----------:|:----------------:|:----------------------:|
------------------:|
+|-----------|:----------:|:----------------:|:----------------------:| -----------------:|
 |/24|	255.255.255.0	|1	|254	|254|
 |/25|	255.255.255.128	|2	|126	|252|
 |/26|	255.255.255.192	|4	|62	|248|
