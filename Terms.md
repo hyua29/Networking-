@@ -161,6 +161,7 @@ to download images, scripts, stylesheets, etc after the page has been delivered
 [CA](https://en.wikipedia.org/wiki/Certificate_authority)
 - certificate authority
 - [watch vedio](https://www.youtube.com/watch?v=DWQpxiXwccQ)
+- [watch vedio](https://www.youtube.com/watch?v=iQsKdtjwtYI)
 - CA certification happens when the packets are sent and are installed at both ends
 - Server certificates typically are issued to hostnames, which could be a machine name (such as ‘XYZ-SERVER-01’) or 
   domain name (such as ‘www.symantec.com’)

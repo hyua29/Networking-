@@ -18,3 +18,5 @@ ufw
 gparted
 crypt
 htop
+sensors (sudo sensors-detect)
+cpufrequtils(cpufreq-info; cpufreq-set)
