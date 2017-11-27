@@ -1,13 +1,9 @@
 xpad
 git cola
-pip
-scrot
+pip3
 gdebi
 lantern
-eclipse
-pycharm
 gcc
-bluegriffon
 metasploit
 wget (wget -k -p domain_name)
 dig _domainname
@@ -20,3 +16,7 @@ crypt
 htop
 sensors (sudo sensors-detect)
 cpufrequtils(cpufreq-info; cpufreq-set)
+hydra
+netcat
+postgresql
+aspack(windows)
