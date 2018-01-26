@@ -15,3 +15,12 @@ update
 ========
 - msfupdate
 - apt-get dist-upgrade
+
+use
+====
+- search -h
+- use _exploit
+- show options
+- set _options
+
+

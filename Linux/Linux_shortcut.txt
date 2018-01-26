@@ -1,4 +1,7 @@
 linux_basic:
+- dpkg --list
+- sudo apt-get purge --auto-remove gimp
+- sudo apt-get clean
 - rm -r _file -> remove a directory 
 - /home/username/.local/share/applications/xxx.desktop
 - ~/.local/share/applications/xxx.desktop

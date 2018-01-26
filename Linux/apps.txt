@@ -18,5 +18,11 @@ sensors (sudo sensors-detect)
 cpufrequtils(cpufreq-info; cpufreq-set)
 hydra
 netcat
+nmap -sV -O (-p _port/_services) _addr 
 postgresql
 aspack(windows)
+tomcat
+tor
+mount
+unetbootin
+netdiscover(-r _addr)
