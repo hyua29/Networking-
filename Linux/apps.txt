@@ -26,3 +26,4 @@ tor
 mount
 unetbootin
 netdiscover(-r _addr)
+efibootmgr (-b _number -B/ -o _number)
